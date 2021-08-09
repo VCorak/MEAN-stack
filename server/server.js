@@ -10,7 +10,7 @@ const fs = require('fs');
 
 const PORT = 9100;
 
-mongoose.connect('mongodb+srv://new-animal:zivotinja1234@cluster0.khkyf.mongodb.net/test?authSource=admin&replicaSet=atlas-v6988y-shard-0&readPreference=primary&animalDB=MongoDB%20Compass&ssl=true', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://new-animal:zivotinja1234@cluster0.khkyf.mongodb.net/animalDB', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -56,7 +56,29 @@ app.get('/allAnimals', (req, res) => {
         });
 });
 
+// Update data from database
+app.put('/:id', (req, res) => {
+    Animal.find()
+        .then((result) => {
+            res.send(result);
+            console.log(result + "for allanimals")
+        })
+        .catch((err) => {
+            console.log(err + "for allanimals")
+        });
+});
 
+// Delete data from database
+app.delete('/:id', (req, res) => {
+    Animal.find()
+        .then((result) => {
+            res.send(result);
+            console.log(result + "for allanimals")
+        })
+        .catch((err) => {
+            console.log(err + "for allanimals")
+        });
+});
 app.listen(PORT, function () {});
 
 
