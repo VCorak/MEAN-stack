@@ -21,22 +21,22 @@ db.once('open', function() {
 
 // Data to database
 
-app.get('/add-animal', (req, res) => {
+app.post('/add-animal', (req, res) => {
     const animal = new Animal({
-        animalImage: '',
-        animalName: 'Fluffy',
-        animalAge: '1',
-        animalSpecies: 'Panda',
-        animalClass: 'mammal',
-        animalFood: 'bamboo'
+        animalImage: req.body.animalImage,
+        animalName: req.body.animalName,
+        animalAge: req.body.animalAge,
+        animalSpecies: req.body.animalSpecies,
+        animalClass: req.body.animalClass,
+        animalFood: req.body.animalFood
     });
 
     animal.save()
         .then((result) => {
-            res.send(result + "for add animal")
+            res.send(result)
         })
         .catch((err) => {{
-            console.log(err + "for add animal")
+            console.log(err)
         }})
 })
 
@@ -44,7 +44,7 @@ app.get('/', function (request, response) {
     response.send('Hello from server');
 });
 
-// Get data from database
+// Read data from database
 app.get('/allAnimals', (req, res) => {
     Animal.find()
         .then((result) => {
@@ -55,6 +55,7 @@ app.get('/allAnimals', (req, res) => {
             console.log(err + "for allanimals")
         });
 });
+
 
 app.listen(PORT, function () {});
 
