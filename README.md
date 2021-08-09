@@ -1,21 +1,17 @@
-# angular-group-exercise
+# MEAN-stack
 
-Our project steps Trello board: https://trello.com/b/tKKBJQhK/agile-board
 
 ## The Mission
 
-Second Angular exercise. Remaking the basic Angular form and adding some personal touches.
-Group exercise by Valentina Corak and Aaron Den Hond.
-Our project is about animal data and storing them in our ZOO. We will map all animals and take their picture when they arrive. 😁
+Remaking the animalDB Angular form and adding MongoDB with some personal touches.
+Project is about animal data and storing them in our ZOO. All animals will be maped and taken their picture when they arrive. 😁
 
-##TO DO : AARON
+##TO DO : 
 
 - Form in html
 - Form validation
 - Error reporting
 - binding the data to the form
-
-##TO DO : VALENTINA
 
 - Form : two way data-binding
 - Server side functionality:
@@ -26,7 +22,7 @@ Our project is about animal data and storing them in our ZOO. We will map all an
 
 ### Must-have features
 
-_A form with different input fields :_
+**A form with different input fields:**
 
 - image,
 - name,
@@ -49,7 +45,7 @@ _A form with different input fields :_
 
 2. Find a project idea, setup trello with to dos and update readme [x]
 
-3. Divide up tasks, but still work together [x]
+3. Divide up tasks in smaller units [x]
 
 4. Setup boilerplate for project [x]
 
