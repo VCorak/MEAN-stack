@@ -1,54 +1,62 @@
+import {Animal} from "../animalDB/src/app/animal";
+
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const app = express();
 const fs = require('fs');
 
+// const animalController = require('./controllers/animalController')
+
 const PORT = 9100;
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}) );
+mongoose.connect('mongodb+srv://new-animal:zivotinja1234@cluster0.khkyf.mongodb.net/test?authSource=admin&replicaSet=atlas-v6988y-shard-0&readPreference=primary&animalDB=MongoDB%20Compass&ssl=true', {useNewUrlParser: true, useUnifiedTopology: true});
 
-app.all("/*", function(req, res, next){
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
-    next();
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    // we're connected!
+    console.log("mongoose connected");
 });
 
-function readData() {
-    let rawdata = fs.readFileSync('data/animals.json');
-    let animal = JSON.parse(rawdata);
-    console.log(animal);
-    return animal;
-}
+// Data to database
 
-function writeData(animal) {
-    let allAnimals = readData();
-    allAnimals.data.push(animal);
-    let data = JSON.stringify(allAnimals);
-    fs.writeFileSync('data/animals.json', data);
-}
+app.get('/add-animal', (req, res) => {
+    const animal = new Animal({
+        animalImage: '',
+        animalName: 'Fluffy',
+        animalAge: '1',
+        animalSpecies: 'Panda',
+        animalClass: 'mammal',
+        animalFood: 'bamboo'
+    });
 
-// Below you can define how your API handles a get or a post request.
-// Try sending a get request to the root, you should get a "Hello from server" back.
+    animal.save()
+        .then((result) => {
+            res.send(result + "for add animal")
+        })
+        .catch((err) => {{
+            console.log(err + "for add animal")
+        }})
+})
 
 app.get('/', function (request, response) {
     response.send('Hello from server');
 });
-// get for allAnimals
-app.get('/allAnimals', function (request, response ) {
-    let allAnimals= readData();
-    response.send(allAnimals.data);
-});
 
-app.post('/', function (request, response) {
-    response.status(200).send({"message": "Data received"});
-});
-
-//push to allAnimals
-app.post('/addAnimal', function (request, response) {
-    writeData(request.body);
-    response.status(200).send({"message": "Data received"});
+// Get data from database
+app.get('/allAnimals', (req, res) => {
+    Animal.find()
+        .then((result) => {
+            res.send(result);
+            console.log(result + "for allanimals")
+        })
+        .catch((err) => {
+            console.log(err + "for allanimals")
+        });
 });
 
 app.listen(PORT, function () {});
+
+
+// app.use('/', animalController);
