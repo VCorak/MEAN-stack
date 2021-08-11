@@ -8,56 +8,55 @@ Project is about animal data and storing them in our ZOO. All animals will be ma
 
 ##TO DO :
 
-[x] * Form in html
-[x] * Form validation
-[x] * Error reporting
-[x] * binding the data to the form
+- [x] Form in html
+- [x] Form validation
+- [x] Error reporting
+- [x] Binding the data to the form
 
-[x] * Form : two-way data-binding
 * Server side functionality:
-  [x] * post our data to a server
-  [] * send data to MongoDB
+  - [x] * post our data to a server
+  - [ ] * send data to MongoDB
     - don't have any error but somehow I get wrong type of connection string and can not send data, display them in Mongo Atlas DB **TO DO!!!**
-  [x] * submitting the form, the animal has been added to the list
-  [x] * displaying the newly updated animal list on page
-[] * Add angular side button update and delete (have the server side)!! **TO DO!!!**
+  - [x] * submitting the form, the animal has been added to the list
+  - [x] * displaying the newly updated animal list on page
+  - [ ] * Add angular side button update and delete (have the server side)!! **TO DO!!!**
      
 
 ### Must-have features
 
-[x] * A Friend class on the client with some fields that you find interesting to keep in a friend book
-[x] * A Friend schema on the server to make it easy for you to get data from the client to the database and vice versa
-[x] * A Friend model to contain your friends data on the server
-[x] * Using the mongoose queries, make a CRUD system to create, update, read and delete friends on your database
+- [x] A Friend class on the client with some fields that you find interesting to keep in a friend book
+- [x] A Friend schema on the server to make it easy for you to get data from the client to the database and vice versa
+- [x] A Friend model to contain your friends data on the server
+- [x] Using the mongoose queries, make a CRUD system to create, update, read and delete friends on your database
   * I didn't make folders, so it looks a bit messy...
-[] * Make it look visually pleasing and add responsiveness
+- [ ] Make it look visually pleasing and add responsiveness
     * have old css from last assigment, didn't make any changes
 
 ### Project Plan
 
-[x] 1. Create a repo and share access. Setup Git rules (no random pushing) 
+- [x] Create a repo and share access. Setup Git rules (no random pushing) 
 
-[x] 2. Find a project idea, setup to dos and update readme 
+- [x] Find a project idea, setup to dos and update readme 
 
-[x] 3. Divide up tasks in smaller units 
+- [x] Divide up tasks in smaller units 
 
-[x] 4. Setup boilerplate for project
+- [x] Setup boilerplate for project
 
-[x] 5. Create basic HTML form structure
+- [x] Create basic HTML form structure
 
-[x] 6. Create animal class and export
+- [x] Create animal class and export
 
-[x] 7. Bind data to form
+- [x] Bind data to form
 
-[x] 8. Form validation
+- [x] Form validation
 
-[x] 9. Error reporting
+- [x] Error reporting
 
-[x] 10. Added a flip animation for cards
+- [x] Added a flip animation for cards
 
-[x] 11. Displaying all our saved animal data in cards
+- [x] Displaying all our saved animal data in cards
 
-[] 12. Submitting the data to the server
+- [ ] Submitting the data to the server
 
   * doesn't work with this link 'mongodb+srv://new-animal:zivotinja1234@cluster0.khkyf.mongodb.net/test', and coach told me that the link supposed
 to look like this: 'mongodb://username:password@host:port/database?options...'
@@ -65,7 +64,7 @@ to look like this: 'mongodb://username:password@host:port/database?options...'
   according to MongoDB documentation. I actually need Standard Connection String Format but can not figure it out how to get it by default,
       because if I try to write in standard form on Compass connection doesn't work at all... 🤔
 
-[x] 13. Connected 
+- [x] Connected 
   * get the connection, but I can not see data in DB
 
 
