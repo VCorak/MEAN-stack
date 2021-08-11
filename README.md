@@ -6,7 +6,7 @@
 Remaking the animalDB Angular form and adding MongoDB with some personal touches.
 Project is about animal data and storing them in our ZOO. All animals will be maped and taken their picture when they arrive. 😁
 
-##TO DO :
+## TO DO:
 
 - [x] Form in html
 - [x] Form validation
