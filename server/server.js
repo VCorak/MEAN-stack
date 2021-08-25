@@ -65,7 +65,7 @@ app.listen(PORT,  () => console.log('server is running on port 9100'));
 
 // MONGOOSE CONNECTION
 dotenv.config(); // mongodb://username:password@host:port/database?options..
-mongoose.connect('mongodb+srv://new-animal:zivotinja1234@cluster0.khkyf.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('', {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
